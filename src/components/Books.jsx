@@ -5,14 +5,14 @@ import React from 'react';
 // I've renamed the data to be more specific to this component
 const booksData = [
   {
-    image: '/images/anna.jpg', // Make sure this image exists in your public/images folder
+    image: '/images/Ice&f.jpg', // Make sure this image exists in your public/images folder
     alt: 'House of the Dragon',
     title: 'House of the Dragon Bundle',
     meta: 'Free right now',
     description: 'Enjoy the books from the popular series.'
   },
   {
-    image: '/images/Chitwan.jpg', // Make sure this image exists too
+    image: '/images/Py3.jpg', // Make sure this image exists too
     alt: 'Python Programming',
     title: 'Learn Python',
     meta: 'Free for beginners',

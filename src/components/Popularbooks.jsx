@@ -14,8 +14,8 @@ function Popularbooks() {
         {/* Left Column */}
         <div className="grid-half grid-column">
           <div className="book-card">
-            <img src="/images/Pokhara.jpg" alt="Pokhara" />
-            <span className="position-absolute-bottom-left destination-name">Pokhara</span>
+            <img src="/images/Rea.jpg" alt="React" />
+            <span className="position-absolute-bottom-left destination-name">React</span>
           </div>
         </div>
 
@@ -24,28 +24,22 @@ function Popularbooks() {
           <div className="grid">
             <div className="grid-half grid-column">
               <div className="book-card">
-                <img src="/images/Kathmandu.jpg" alt="Kathmandu" />
-                <span className="position-absolute-bottom-left destination-name">Kathmandu</span>
+                <img src="/images/Py2.jpg" alt="Python" />
+                <span className="position-absolute-bottom-left destination-name">Python</span>
               </div>
             </div>
             <div className="grid-half grid-column">
               <div className="book-card">
-                <img src="/images/Chitwan1.jpg" alt="Chitwan" />
-                <span className="position-absolute-bottom-left destination-name">Chitwan</span>
+                <img src="/images/Game.jpg" alt="Game of throne" />
+                <span className="position-absolute-bottom-left destination-name">Game of throne</span>
               </div>
             </div>
           </div>
           <div className="grid">
             <div className="grid-half grid-column">
               <div className="book-card">
-                <img src="/images/Lumbini.jpg" alt="Lumbini" />
-                <span className="position-absolute-bottom-left destination-name">Lumbini</span>
-              </div>
-            </div>
-            <div className="grid-half grid-column">
-              <div className="book-card">
-                <img src="/images/Bhaktapur.jpg" alt="Bhaktapur" />
-                <span className="position-absolute-bottom-left destination-name">Bhaktapur</span>
+                <img src="/images/Clash1.jpg" alt="Clash of king" />
+                <span className="position-absolute-bottom-left destination-name">Clash of king</span>
               </div>
             </div>
           </div>

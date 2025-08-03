@@ -9,7 +9,7 @@ function Header() {
 
   return (
     <header className="header-content position-relative">
-      <img className="hero-image" src="/images/Swoyam1.jpg" alt="A library or a reading scene" />
+      <img className="hero-image" src="/images/Clash.jpg" alt="A library or a reading scene" />
 
       <div className="position-absolute-middle">
         <div className="tab-bar">
