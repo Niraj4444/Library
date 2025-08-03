@@ -1,17 +1,17 @@
-/* Digitalbook i name it and change it */
+/* Digitalbook - Updated and Improved */
 
 /* --- 1. Global Styles & Variables --- */
 :root {
-  --primary-color: #D82E2F; /* A vibrant red, inspired by Nepal's flag */
-  --secondary-color: #303952; /* A dark charcoal for text and backgrounds */
+  --primary-color: #D82E2F;
+  --secondary-color: #303952;
   --light-gray: #f4f4f4;
   --text-color: #333;
   --white: #fff;
-  --border-color: #ccc;
-  --muted-text-color: #6c757d; /* A soft, muted gray for subtitles */
+  --border-color: #e0e0e0; /* CHANGED: A slightly softer border color */
+  --muted-text-color: #6c757d;
 }
 
-body, h1, h2, h3, h4, h5, h6 {
+body, h1, h2, h3, h4, h5, h6, button, input, textarea { /* ADDED: Ensure consistent font */
   font-family: "Poppins", sans-serif;
 }
 
@@ -20,35 +20,40 @@ body {
   color: var(--text-color);
   margin: 0;
   font-size: 16px;
+  -webkit-font-smoothing: antialiased; /* ADDED: Makes fonts look smoother */
+  -moz-osx-font-smoothing: grayscale; /* ADDED: Makes fonts look smoother */
 }
 
 img {
   max-width: 100%;
   height: auto;
-  vertical-align: middle;
+  display: block; /* CHANGED: Removes small gap below images */
 }
 
 a {
   color: var(--primary-color);
   text-decoration: none;
+  transition: opacity 0.3s; /* ADDED: Smooth hover effect for all links */
+}
+
+a:hover {
+  opacity: 0.8; /* ADDED: Smooth hover effect for all links */
 }
 
 /* --- 2. Layout & Grid System --- */
 .main-content {
   max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto; /* CHANGED: Simplified margin */
+  padding: 0 16px; /* ADDED: Ensures content doesn't touch screen edges on mobile */
 }
 
 .header-content {
   max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
+  margin: 20px auto 0; /* CHANGED: Simplified margin */
 }
 
 .section {
-  padding: 16px 24px;
+  padding: 16px 0; /* CHANGED: Removed horizontal padding to let main-content handle it */
 }
 
 .section-margin-top {
@@ -58,11 +63,11 @@ a {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -16px;
+  margin: 0 -8px; /* CHANGED: Reduced gutter for a tighter grid */
 }
 
 .grid-column {
-  padding: 0 16px;
+  padding: 0 8px; /* CHANGED: Reduced gutter for a tighter grid */
   box-sizing: border-box;
   margin-bottom: 16px;
 }
@@ -78,7 +83,6 @@ a {
 
 .flex-column-fill > .grid {
   flex-grow: 1;
-  display: flex;
 }
 
 .position-relative {
@@ -90,7 +94,8 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 65%;
+  width: 90%; /* CHANGED: Adjusted width for better responsiveness */
+  max-width: 600px; /* ADDED: Prevents the box from becoming too wide on large screens */
 }
 
 .position-absolute-bottom-left {
@@ -107,9 +112,10 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 16px;
+  padding: 12px 24px; /* CHANGED: A bit more vertical padding */
   background-color: var(--white);
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* ADDED: Subtle shadow for depth */
 }
 
 .brand-logo {
@@ -118,19 +124,54 @@ a {
   color: var(--primary-color);
 }
 
-/* In Digitalbook.css, find and edit this existing style */
-.nav-link {
-  font-size: 24px;
-  /* CHANGE THIS: from #666 or #333 to var(--primary-color) */
-  color: var(--primary-color); 
-  padding: 8px 16px;
-  font-weight: 600; /* Added to make it look bolder */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* CHANGED: Adjusted gap for better spacing */
 }
 
-/* Make sure this hover effect still exists */
-.nav-link:hover {
-  opacity: 0.8; /* A simple fade effect on hover */
+.nav-link {
+  font-size: 16px; /* CHANGED: Slightly smaller for a cleaner look */
+  color: var(--secondary-color); /* CHANGED: A more readable dark color */
+  font-weight: 600;
+  padding: 8px; /* CHANGED: Simplified padding */
 }
+
+.nav-link:hover {
+  color: var(--primary-color); /* ADDED: Specific hover color */
+  opacity: 1; /* Override the global 'a:hover' opacity */
+}
+
+/* THIS IS THE BOOKMARK ICON FIX */
+.nav-link .fas { /* ADDED */
+  font-size: 20px;
+  color: var(--secondary-color);
+  transition: color 0.3s;
+}
+
+.nav-link:hover .fas { /* ADDED */
+  color: var(--primary-color);
+}
+
+.btn-primary-nav {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* ADDED: transform for a nice click effect */
+}
+
+.btn-primary-nav:hover {
+  background-color: #a82223;
+}
+.btn-primary-nav:active { /* ADDED */
+  transform: scale(0.98); /* Adds a "press down" effect */
+}
+
 
 /* Hero Section */
 .hero-image {
@@ -169,6 +210,7 @@ a {
   background-color: var(--white);
   padding: 24px;
   border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ADDED: A shadow to lift the content box */
 }
 
 /* Forms and Buttons */
@@ -178,17 +220,35 @@ a {
   border: 1px solid var(--border-color);
   border-radius: 4px;
   box-sizing: border-box;
+  font-size: 16px; /* ADDED */
+  transition: border-color 0.3s, box-shadow 0.3s; /* ADDED */
+}
+.form-input:focus { /* ADDED */
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(216, 46, 47, 0.2);
+}
+textarea.form-input { /* ADDED: Specific styling for textareas */
+  resize: vertical;
+  min-height: 100px;
 }
 
 .btn {
-  padding: 10px 20px;
+  display: inline-block; /* ADDED: Better for layout */
+  padding: 12px 24px; /* CHANGED: Standardized padding */
   border: none;
   color: var(--white);
   cursor: pointer;
   font-size: 16px;
+  font-weight: 600; /* ADDED */
   margin-top: 16px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s; /* ADDED */
   border-radius: 8px;
+  text-align: center; /* ADDED */
+}
+
+.btn:active { /* ADDED */
+  transform: scale(0.98);
 }
 
 .btn-primary {
@@ -198,25 +258,19 @@ a {
   background-color: var(--primary-color);
 }
 
-.btn-subscribe {
-  background-color: var(--primary-color);
-}
-.btn-subscribe:hover {
-  background-color: #a82223;
-}
 
-/* Destination Cards */
+/* Book Cards (Image grid) */
 .book-card {
   position: relative;
   color: var(--white);
   height: 100%;
+  border-radius: 8px; /* ADDED: So the container is rounded too */
+  overflow: hidden; /* ADDED: Ensures the image stays within the rounded corners */
 }
 
 .book-card img {
-    border-radius: 8px;
     filter: brightness(0.8);
-    transition: filter 0.3s;
-    display: block;
+    transition: filter 0.3s, transform 0.3s; /* ADDED */
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -224,18 +278,19 @@ a {
 
 .book-card:hover img {
   filter: brightness(1);
+  transform: scale(1.05); /* ADDED: A nice zoom effect on hover */
 }
 
 .book-name {
   font-weight: 600;
   font-size: 20px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* CHANGED: Stronger shadow for readability */
 }
 
-/* Adventure & Content Cards */
+/* Content Cards (Books with text below) */
 .card {
   background-color: var(--white);
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* CHANGED: A modern shadow */
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -251,52 +306,28 @@ a {
 }
 
 .card .card-content .card-meta {
-  opacity: 0.7;
+  color: var(--muted-text-color); /* CHANGED: Uses the variable */
+  font-size: 14px; /* ADDED */
 }
 
 .card .btn {
-  margin-top: auto;
+  margin-top: auto; /* This correctly pushes the button to the bottom */
 }
 
- 
-/* Contact Section */
-.contact-info i {
-  width: 30px;
-  color: var(--primary-color);
-}
 
-/* Footer */
-.footer {
-  text-align: center;
-  opacity: 0.8;
-  padding: 32px 16px;
-}
-
-.social-icons a {
-  font-size: 24px;
-  margin: 0 10px;
-  color: var(--secondary-color);
-  transition: color 0.3s;
-}
-.social-icons a:hover {
-  color: var(--primary-color);
-}
-
-/* --- 4. NEW & IMPROVED SECTION HEADINGS --- */
-
-/* Style for main headings like "Popular Destinations" */
+/* --- 4. Section Headings --- */
 .section h3 {
-  font-weight: 600; /* Makes the heading slightly bolder */
-  margin-bottom: 4px; /* Reduces the space below the heading */
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 28px; /* CHANGED: Larger, more impactful heading */
 }
 
-/* Style for subtitles like "Explore the beauty..." */
 .section h3 + h6,
 .section h3 + p {
-  margin-top: 0; /* Removes the space above the subtitle */
-  margin-bottom: 24px; /* Adds space below it to separate from content */
-  color: var(--muted-text-color); /* Uses a softer gray color */
-  font-size: 1.1rem; /* Makes it slightly larger than body text */
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: var(--muted-text-color);
+  font-size: 1.1rem;
 }
 
 
@@ -306,6 +337,8 @@ a {
     position: static;
     transform: none;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* ADDED */
   }
 
   .header-content {
@@ -316,12 +349,21 @@ a {
     display: none;
   }
 
-  .tab-bar {
+  .tab-bar, .tab-content {
     border-radius: 0;
   }
 
-  .tab-content {
-    border-radius: 0;
+  .navbar {
+    padding: 12px 16px; /* CHANGED: Less padding on mobile */
+  }
+
+  .nav-link {
+    font-size: 14px; /* CHANGED: Smaller links on mobile */
+    padding: 4px;
+  }
+
+  .navbar-actions {
+    gap: 8px; /* CHANGED: Tighter gap on mobile */
   }
 }
 
@@ -329,31 +371,4 @@ a {
   .grid-half {
     width: 100%;
   }
-}
-
-/* --- 6. UPGRADED NAVIGATION BAR STYLES --- */
-
-/* This targets the container for the right-side links */
-.navbar-actions {
-  display: flex;
-  align-items: center; /* Vertically aligns all items in the middle */
-  gap: 20px; /* Creates space between each item (Contact, icon, Login, etc.) */
-}
-
-/* We create a new button style specifically for the navbar */
-/* so it doesn't have to be as large as the other buttons on the page. */
-.btn-primary-nav {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--primary-color);
-  color: var(--white);
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn-primary-nav:hover {
-  background-color: #a82223; /* A slightly darker red for hover */
 }
