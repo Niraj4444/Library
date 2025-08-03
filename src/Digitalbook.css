@@ -1,0 +1,359 @@
+/* Digitalbook i name it and change it */
+
+/* --- 1. Global Styles & Variables --- */
+:root {
+  --primary-color: #D82E2F; /* A vibrant red, inspired by Nepal's flag */
+  --secondary-color: #303952; /* A dark charcoal for text and backgrounds */
+  --light-gray: #f4f4f4;
+  --text-color: #333;
+  --white: #fff;
+  --border-color: #ccc;
+  --muted-text-color: #6c757d; /* A soft, muted gray for subtitles */
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  margin: 0;
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* --- 2. Layout & Grid System --- */
+.main-content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-content {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.section {
+  padding: 16px 24px;
+}
+
+.section-margin-top {
+  margin-top: 16px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.grid-column {
+  padding: 0 16px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.grid-half {
+  width: 50%;
+}
+
+.flex-column-fill {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-fill > .grid {
+  flex-grow: 1;
+  display: flex;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute-middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+}
+
+.position-absolute-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px 24px;
+}
+
+/* --- 3. Component Styles --- */
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: var(--white);
+  border-bottom: 1px solid #ddd;
+}
+
+.brand-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* In Digitalbook.css, find and edit this existing style */
+.nav-link {
+  font-size: 24px;
+  /* CHANGE THIS: from #666 or #333 to var(--primary-color) */
+  color: var(--primary-color); 
+  padding: 8px 16px;
+  font-weight: 600; /* Added to make it look bolder */
+}
+
+/* Make sure this hover effect still exists */
+.nav-link:hover {
+  opacity: 0.8; /* A simple fade effect on hover */
+}
+
+/* Hero Section */
+.hero-image {
+  border-radius: 12px;
+}
+
+/* Tabs */
+.tab-bar {
+  display: flex;
+  background-color: #000;
+  border-radius: 8px 8px 0 0;
+}
+
+.tab-link {
+  flex-grow: 1;
+  padding: 12px 16px;
+  border: none;
+  background-color: inherit;
+  color: var(--white);
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.tab-link:hover {
+  background-color: #333;
+}
+
+.tab-link.active {
+  background-color: var(--primary-color);
+}
+
+.tab-content {
+  display: none;
+  background-color: var(--white);
+  padding: 24px;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Forms and Buttons */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 16px;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+}
+.btn-primary:hover {
+  background-color: var(--primary-color);
+}
+
+.btn-subscribe {
+  background-color: var(--primary-color);
+}
+.btn-subscribe:hover {
+  background-color: #a82223;
+}
+
+/* Destination Cards */
+.book-card {
+  position: relative;
+  color: var(--white);
+  height: 100%;
+}
+
+.book-card img {
+    border-radius: 8px;
+    filter: brightness(0.8);
+    transition: filter 0.3s;
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.book-card:hover img {
+  filter: brightness(1);
+}
+
+.book-name {
+  font-weight: 600;
+  font-size: 20px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Adventure & Content Cards */
+.card {
+  background-color: var(--white);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card .card-content {
+  padding: 16px 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .card-content .card-meta {
+  opacity: 0.7;
+}
+
+.card .btn {
+  margin-top: auto;
+}
+
+ 
+/* Contact Section */
+.contact-info i {
+  width: 30px;
+  color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  opacity: 0.8;
+  padding: 32px 16px;
+}
+
+.social-icons a {
+  font-size: 24px;
+  margin: 0 10px;
+  color: var(--secondary-color);
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: var(--primary-color);
+}
+
+/* --- 4. NEW & IMPROVED SECTION HEADINGS --- */
+
+/* Style for main headings like "Popular Destinations" */
+.section h3 {
+  font-weight: 600; /* Makes the heading slightly bolder */
+  margin-bottom: 4px; /* Reduces the space below the heading */
+}
+
+/* Style for subtitles like "Explore the beauty..." */
+.section h3 + h6,
+.section h3 + p {
+  margin-top: 0; /* Removes the space above the subtitle */
+  margin-bottom: 24px; /* Adds space below it to separate from content */
+  color: var(--muted-text-color); /* Uses a softer gray color */
+  font-size: 1.1rem; /* Makes it slightly larger than body text */
+}
+
+
+/* --- 5. Responsive Design --- */
+@media (max-width: 768px) {
+  .position-absolute-middle {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
+  .header-content {
+    margin-top: 0;
+  }
+
+  .hero-image {
+    display: none;
+  }
+
+  .tab-bar {
+    border-radius: 0;
+  }
+
+  .tab-content {
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-half {
+    width: 100%;
+  }
+}
+
+/* --- 6. UPGRADED NAVIGATION BAR STYLES --- */
+
+/* This targets the container for the right-side links */
+.navbar-actions {
+  display: flex;
+  align-items: center; /* Vertically aligns all items in the middle */
+  gap: 20px; /* Creates space between each item (Contact, icon, Login, etc.) */
+}
+
+/* We create a new button style specifically for the navbar */
+/* so it doesn't have to be as large as the other buttons on the page. */
+.btn-primary-nav {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary-nav:hover {
+  background-color: #a82223; /* A slightly darker red for hover */
+}
