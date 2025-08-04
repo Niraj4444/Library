@@ -12,10 +12,7 @@ function Navbar() {
         <Link to="/contact" className="nav-link">Contact</Link>
         <Link to="/login" className="nav-link">Login</Link>
 
-        {/* THIS IS THE MISSING LINE! ADD IT BACK IN. */}
-        <Link to="/bookmarks" className="nav-link">
-          <i className="fas fa-bookmark"></i>
-        </Link>
+        {/* REMOVED: The link to the bookmarks page is now gone. */}
 
         <Link to="/signup">
           <button className="btn btn-primary-nav">Sign Up</button>

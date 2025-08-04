@@ -1,7 +1,6 @@
 // src/App.jsx
 
 import React from 'react';
-// 1. Import BrowserRouter here now
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './Digitalbook.css';
 
@@ -15,7 +14,9 @@ import Popularbooks from './components/Popularbooks';
 import LoginPage from './pages/LoginPage';
 import ContactPage from './pages/ContactPage';
 import SignupPage from './pages/SignupPage';
-import BookmarksPage from './pages/BookmarksPage';
+
+// REMOVED: The import for BookmarksPage is gone because the file doesn't exist.
+// REMOVED: The import for ProtectedRoute is also gone.
 
 // Component for the Home Page content
 function HomePage() {
@@ -33,16 +34,16 @@ function HomePage() {
 // This is the main App component
 function App() {
   return (
-    // 2. Wrap EVERYTHING inside BrowserRouter
     <BrowserRouter>
-      <Navbar /> {/* Navbar is now a child of BrowserRouter */}
+      <Navbar />
       <main>
-        <Routes> {/* Routes is also a child of BrowserRouter */}
+        <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/bookmarks" element={<BookmarksPage />} />
+
+          {/* REMOVED: The entire route for "/bookmarks" is deleted. */}
         </Routes>
       </main>
     </BrowserRouter>
