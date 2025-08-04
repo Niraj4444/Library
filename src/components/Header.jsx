@@ -18,11 +18,6 @@ function Header() {
             onClick={() => setActiveTab('Books')}>
               <i className="fas fa-book"></i> Books
           </button>
-          <button 
-            className={`tab-link ${activeTab === 'Novels' ? 'active' : ''}`} 
-            onClick={() => setActiveTab('Novels')}>
-              <i className="fas fa-book-open"></i> Novels
-          </button>
         </div>
 
         {activeTab === 'Books' && (
@@ -31,15 +26,6 @@ function Header() {
             <p>Find your next great read.</p>
             <input className="form-input" type="text" placeholder="e.g., The Lord of the Rings" />
             <p><button className="btn btn-primary">Search Books</button></p>
-          </div>
-        )}
-
-        {activeTab === 'Novels' && (
-          <div id="Novels" className="tab-content" style={{display: 'block'}}>
-            <h3>Find Novels</h3>
-            <p>Dive into captivating stories.</p>
-            <input className="form-input" type="text" placeholder="e.g., Pride and Prejudice" />
-            <p><button className="btn btn-primary">Search Novels</button></p>
           </div>
         )}
 
