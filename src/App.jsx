@@ -3,6 +3,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './Digitalbook.css';
+import './App.css';
 
 // --- Component Imports ---
 import Navbar from './components/Navbar';
