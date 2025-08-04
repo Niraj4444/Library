@@ -7,11 +7,11 @@
   --light-gray: #f4f4f4;
   --text-color: #333;
   --white: #fff;
-  --border-color: #e0e0e0; /* CHANGED: A slightly softer border color */
+  --border-color: #e0e0e0;
   --muted-text-color: #6c757d;
 }
 
-body, h1, h2, h3, h4, h5, h6, button, input, textarea { /* ADDED: Ensure consistent font */
+body, h1, h2, h3, h4, h5, h6, button, input, textarea {
   font-family: "Poppins", sans-serif;
 }
 
@@ -20,40 +20,40 @@ body {
   color: var(--text-color);
   margin: 0;
   font-size: 16px;
-  -webkit-font-smoothing: antialiased; /* ADDED: Makes fonts look smoother */
-  -moz-osx-font-smoothing: grayscale; /* ADDED: Makes fonts look smoother */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
   max-width: 100%;
   height: auto;
-  display: block; /* CHANGED: Removes small gap below images */
+  display: block;
 }
 
 a {
   color: var(--primary-color);
   text-decoration: none;
-  transition: opacity 0.3s; /* ADDED: Smooth hover effect for all links */
+  transition: opacity 0.3s;
 }
 
 a:hover {
-  opacity: 0.8; /* ADDED: Smooth hover effect for all links */
+  opacity: 0.8;
 }
 
 /* --- 2. Layout & Grid System --- */
 .main-content {
   max-width: 1100px;
-  margin: 0 auto; /* CHANGED: Simplified margin */
-  padding: 0 16px; /* ADDED: Ensures content doesn't touch screen edges on mobile */
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 .header-content {
   max-width: 1500px;
-  margin: 20px auto 0; /* CHANGED: Simplified margin */
+  margin: 20px auto 0;
 }
 
 .section {
-  padding: 16px 0; /* CHANGED: Removed horizontal padding to let main-content handle it */
+  padding: 16px 0;
 }
 
 .section-margin-top {
@@ -63,11 +63,11 @@ a:hover {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -8px; /* CHANGED: Reduced gutter for a tighter grid */
+  margin: 0 -8px;
 }
 
 .grid-column {
-  padding: 0 8px; /* CHANGED: Reduced gutter for a tighter grid */
+  padding: 0 8px;
   box-sizing: border-box;
   margin-bottom: 16px;
 }
@@ -94,8 +94,8 @@ a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%; /* CHANGED: Adjusted width for better responsiveness */
-  max-width: 600px; /* ADDED: Prevents the box from becoming too wide on large screens */
+  width: 90%;
+  max-width: 600px;
 }
 
 .position-absolute-bottom-left {
@@ -112,10 +112,10 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px; /* CHANGED: A bit more vertical padding */
+  padding: 12px 24px;
   background-color: var(--white);
   border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* ADDED: Subtle shadow for depth */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .brand-logo {
@@ -127,29 +127,28 @@ a:hover {
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 16px; /* CHANGED: Adjusted gap for better spacing */
+  gap: 16px;
 }
 
 .nav-link {
-  font-size: 16px; /* CHANGED: Slightly smaller for a cleaner look */
-  color: var(--secondary-color); /* CHANGED: A more readable dark color */
+  font-size: 16px;
+  color: var(--secondary-color);
   font-weight: 600;
-  padding: 8px; /* CHANGED: Simplified padding */
+  padding: 8px;
 }
 
 .nav-link:hover {
-  color: var(--primary-color); /* ADDED: Specific hover color */
-  opacity: 1; /* Override the global 'a:hover' opacity */
+  color: var(--primary-color);
+  opacity: 1;
 }
 
-/* THIS IS THE BOOKMARK ICON FIX */
-.nav-link .fas { /* ADDED */
+.nav-link .fas {
   font-size: 20px;
   color: var(--secondary-color);
   transition: color 0.3s;
 }
 
-.nav-link:hover .fas { /* ADDED */
+.nav-link:hover .fas {
   color: var(--primary-color);
 }
 
@@ -162,14 +161,14 @@ a:hover {
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s; /* ADDED: transform for a nice click effect */
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn-primary-nav:hover {
   background-color: #a82223;
 }
-.btn-primary-nav:active { /* ADDED */
-  transform: scale(0.98); /* Adds a "press down" effect */
+.btn-primary-nav:active {
+  transform: scale(0.98);
 }
 
 
@@ -210,7 +209,7 @@ a:hover {
   background-color: var(--white);
   padding: 24px;
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ADDED: A shadow to lift the content box */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* Forms and Buttons */
@@ -220,34 +219,34 @@ a:hover {
   border: 1px solid var(--border-color);
   border-radius: 4px;
   box-sizing: border-box;
-  font-size: 16px; /* ADDED */
-  transition: border-color 0.3s, box-shadow 0.3s; /* ADDED */
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
-.form-input:focus { /* ADDED */
+.form-input:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(216, 46, 47, 0.2);
 }
-textarea.form-input { /* ADDED: Specific styling for textareas */
+textarea.form-input {
   resize: vertical;
   min-height: 100px;
 }
 
 .btn {
-  display: inline-block; /* ADDED: Better for layout */
-  padding: 12px 24px; /* CHANGED: Standardized padding */
+  display: inline-block;
+  padding: 12px 24px;
   border: none;
   color: var(--white);
   cursor: pointer;
   font-size: 16px;
-  font-weight: 600; /* ADDED */
+  font-weight: 600;
   margin-top: 16px;
-  transition: background-color 0.3s, transform 0.2s; /* ADDED */
+  transition: background-color 0.3s, transform 0.2s;
   border-radius: 8px;
-  text-align: center; /* ADDED */
+  text-align: center;
 }
 
-.btn:active { /* ADDED */
+.btn:active {
   transform: scale(0.98);
 }
 
@@ -264,13 +263,13 @@ textarea.form-input { /* ADDED: Specific styling for textareas */
   position: relative;
   color: var(--white);
   height: 100%;
-  border-radius: 8px; /* ADDED: So the container is rounded too */
-  overflow: hidden; /* ADDED: Ensures the image stays within the rounded corners */
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .book-card img {
     filter: brightness(0.8);
-    transition: filter 0.3s, transform 0.3s; /* ADDED */
+    transition: filter 0.3s, transform 0.3s;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -278,19 +277,19 @@ textarea.form-input { /* ADDED: Specific styling for textareas */
 
 .book-card:hover img {
   filter: brightness(1);
-  transform: scale(1.05); /* ADDED: A nice zoom effect on hover */
+  transform: scale(1.05);
 }
 
 .book-name {
   font-weight: 600;
   font-size: 20px;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* CHANGED: Stronger shadow for readability */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
 /* Content Cards (Books with text below) */
 .card {
   background-color: var(--white);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* CHANGED: A modern shadow */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -306,20 +305,49 @@ textarea.form-input { /* ADDED: Specific styling for textareas */
 }
 
 .card .card-content .card-meta {
-  color: var(--muted-text-color); /* CHANGED: Uses the variable */
-  font-size: 14px; /* ADDED */
+  color: var(--muted-text-color);
+  font-size: 14px;
 }
 
 .card .btn {
-  margin-top: auto; /* This correctly pushes the button to the bottom */
+  margin-top: auto;
 }
+
+/* ======================================================== */
+/*  NEW STYLES ADDED FOR CONTACT FORM AND OTHER STANDALONE PAGES */
+/* ======================================================== */
+.content-card {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.content-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: var(--text-color);
+}
+
+.content-card p {
+  color: var(--muted-text-color);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+/* ======================================================== */
+/*                      END OF NEW STYLES                   */
+/* ======================================================== */
 
 
 /* --- 4. Section Headings --- */
 .section h3 {
   font-weight: 600;
   margin-bottom: 4px;
-  font-size: 28px; /* CHANGED: Larger, more impactful heading */
+  font-size: 28px;
 }
 
 .section h3 + h6,
@@ -338,7 +366,7 @@ textarea.form-input { /* ADDED: Specific styling for textareas */
     transform: none;
     width: 100%;
     max-width: 100%;
-    box-sizing: border-box; /* ADDED */
+    box-sizing: border-box;
   }
 
   .header-content {
@@ -354,16 +382,16 @@ textarea.form-input { /* ADDED: Specific styling for textareas */
   }
 
   .navbar {
-    padding: 12px 16px; /* CHANGED: Less padding on mobile */
+    padding: 12px 16px;
   }
 
   .nav-link {
-    font-size: 14px; /* CHANGED: Smaller links on mobile */
+    font-size: 14px;
     padding: 4px;
   }
 
   .navbar-actions {
-    gap: 8px; /* CHANGED: Tighter gap on mobile */
+    gap: 8px;
   }
 }
 
@@ -372,4 +400,3 @@ textarea.form-input { /* ADDED: Specific styling for textareas */
     width: 100%;
   }
 }
-
